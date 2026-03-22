@@ -1,0 +1,103 @@
+:root {
+  --bg: radial-gradient(circle at 20% 20%, #1b1e33 0%, #070910 65%);
+  --accent: #53f5d8;
+  --soft: rgba(255, 255, 255, 0.78);
+  --muted: rgba(255, 255, 255, 0.45);
+  --card: rgba(9, 10, 21, 0.7);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  min-height: 100vh;
+  background: var(--bg);
+  color: #f2f6ff;
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#scene-root {
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  position: absolute;
+  inset: 2rem;
+  top: auto;
+  right: 3rem;
+  max-width: 380px;
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 80px rgba(5, 9, 24, 0.7);
+}
+
+.hud h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+}
+
+.hud p {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.hud span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.status {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.status label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.status span {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--soft);
+}
+
+#input-video {
+  position: fixed;
+  inset: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  .hud {
+    inset: 1rem;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+  }
+}
