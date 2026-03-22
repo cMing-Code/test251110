@@ -1,0 +1,11 @@
+# 忽略所有C语言编译后的可执行文件
+  *.exe
+  *.out
+# 忽略日志文件
+  *.log
+# 忽略指定文件夹（比如存放测试数据的data文件夹）
+myyenv/
+  # 忽略指定文件（比如配置文件config.h）
+config.h
+# 例外：虽然忽略*.log，但保留test.log
+  !test.log
