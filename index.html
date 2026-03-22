@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Immersive Gesture Particles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Noto+Sans+SC:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
+    ></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="scene-root"></div>
+
+      <div class="hud">
+        <h1>Gesture Particles</h1>
+        <p>
+          右手在空中张开或握拳来调节星球大小，挥动手掌即可扰动粒子
+        </p>
+        <div class="status">
+          <div>
+            <label>星球半径</label>
+            <span id="radius-label">55</span>
+          </div>
+          <div>
+            <label>右手状态</label>
+            <span id="right-hand-label">等待</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <video id="input-video" playsinline muted></video>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
